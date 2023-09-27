@@ -3,7 +3,7 @@ name: NPM Prioritize Scan
 on: workflow_dispatch
 
 jobs:
-  WhiteSource-Prioritize:
+  Mend-Prioritize:
     runs-on: ubuntu-latest
 
     strategy:
@@ -35,16 +35,14 @@ jobs:
         env:
           WS_APIKEY: ${{secrets.APIKEY}}
           WS_USERKEY: ${{secrets.USERKEY}}
-          WS_WSS_URL: https://saas.whitesourcesoftware.com/agent
+          WS_WSS_URL: https://saas.mend.io/agent
           WS_PRODUCTNAME: GH_${{github.event.repository.name}}
           WS_PROJECTNAME: NodeGoat_Prioritize
           WS_ENABLEIMPACTANALYSIS: true
-          WS_REQUIREKNOWNSHA1: false
           WS_RESOLVEALLDEPENDENCIES: false
           WS_NPM_RESOLVEDEPENDENCIES: true
           WS_NPM_RESOLVELOCKFILE: false
           WS_FILESYSTEMSCAN: false
-          WS_GENERATEPROJECTDETAILSJSON: true
         run: |
           curl -LJO https://unified-agent.s3.amazonaws.com/wss-unified-agent.jar
           echo Unified Agent downloaded successfully
