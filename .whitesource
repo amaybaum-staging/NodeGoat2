@@ -1,41 +1,23 @@
 {
+  "settingsInheritedFrom": "DimaMend/whitesource-config@main",
   "scanSettings": {
-    "configMode": "LOCAL",
-    "configExternalURL": "",
-    "projectToken": "",
-    "baseBranches": [],
-    "enableLicenseViolations": true,
-    "displayLicenseViolations": "true"
+    "enableReachability": true
   },
   "checkRunSettings": {
-    "vulnerableCheckRunConclusionLevel": "failure",
-    "displayMode": "diff"
+    "strictMode": "warning"
   },
-  "issueSettings": {
-    "minSeverityLevel": "LOW",
-    "issueType": "DEPENDENCY"
+  "scanSettingsSAST": {
+    "enableScan": "true",
+    "scanPullRequests": true
   },
   "remediateSettings": {
+    "workflowRules": {
+      "enabled": true
+    },
     "enableRenovate": true,
-    "dependencyDashboard": true,
     "extends": [
-      "github>whitesource/merge-confidence:beta",
-      "github>samq-ghdemo/renovate:demo",
-      ":separateMajorReleases",
-      ":combinePatchMinorReleases",
-      ":ignoreUnstable",
-      ":prImmediately",
-      ":semanticPrefixFixDepsChoreOthers",
-      ":updateNotScheduled",
-      ":automergeDisabled",
-      ":ignoreModulesAndTests",
-      ":autodetectPinVersions",
-      ":prHourlyLimitNone",
-      ":prConcurrentLimitNone",
-      "group:monorepos",
-      "group:recommended",
-      "helpers:disableTypesNodeMajor",
-      "workarounds:all"
-      ] 
-  } 
+      "config:base",
+      "github>whitesource/merge-confidence:beta"
+    ]
+  }
 }
