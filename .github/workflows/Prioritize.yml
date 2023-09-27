@@ -1,9 +1,9 @@
-name: NPM Prioritize Scan
+name: Mend Prioritize Scan
 
 on: workflow_dispatch
 
 jobs:
-  Mend-Prioritize:
+  NPM-Scan:
     runs-on: ubuntu-latest
 
     strategy:
