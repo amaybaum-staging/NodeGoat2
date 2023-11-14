@@ -1,7 +1,7 @@
 {
   "settingsInheritedFrom": "DimaMend/whitesource-config@main",
   "scanSettings": {
-    "enableReachability": true
+    "enableReachability": false
   },
   "checkRunSettings": {
     "strictMode": "warning"
